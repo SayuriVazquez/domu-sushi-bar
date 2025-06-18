@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DOMU Sushi Bar</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fefefe;
+      color: #333;
+      line-height: 1.6;
+      padding-top: 80px; /* espacio para navbar fija */
+    }
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
+        url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1600') center/cover no-repeat;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: white;
+      text-align: center;
+    }
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10%;
+      background-color: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+    }
+    .navbar .logo {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+    }
+    .nav-links li { margin-left: 20px; }
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: #ffcc00; }
+    .hero-content {
+      margin-bottom: 40px;
+      padding: 0 10%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    .btn-primary {
+      background: #d32f2f;
+      color: #fff;
+      padding: 12px 25px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .btn-primary:hover { background: #b71c1c; }
+    section { padding: 60px 10%; text-align: center; }
+    section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      color: #d32f2f;
+    }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .menu-grid article {
+      background-color: #fff;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      overflow: hidden;
+    }
+    .menu-grid article:hover {
+      transform: scale(1.03);
+      border-color: #d32f2f;
+    }
+    .menu-grid img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .menu-grid h3 {
+      margin-top: 15px;
+      font-size: 1.4rem;
+      color: #b71c1c;
+    }
+    .menu-grid p {
+      padding: 0 15px 20px;
+      font-size: 0.95rem;
+    }
+    .menu-grid .price {
+      font-weight: bold;
+      color: #d32f2f;
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+    .reservas-section {
+      background-color: #f5f5f5;
+      padding: 50px 10%;
+    }
+    .reservas-section p {
+      font-size: 1.1rem;
+      margin-top: 10px;
+    }
+    footer {
+      background: #222;
+      color: #ccc;
+      padding: 30px 10%;
+      text-align: center;
+    }
+    footer .datos-alumno {
+      color: #fff;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<header class="hero" id="inicio">
+  <nav class="navbar">
+    <a href="#inicio" class="logo">DOMU SUSHI</a>
+    <ul class="nav-links">
+    <li><a href="#clasicos">Rollos Clasicos</a></li>
+      <li><a href="#especiales">Rollos Especiales</a></li>
+      <li><a href="#bebidas">Bebidas</a></li>
+      <li><a href="#postres">Postres</a></li>
+      <li><a href="#reservas">Reservas</a></li>
+    </ul>
+  </nav>
+  <div class="hero-content">
+    <h1>Bienvenido a DOMU Sushi Bar</h1>
+    <p>El sabor japones que conquista Veracruz</p>
+    <a href="#reservas" class="btn-primary">Haz tu reservacion</a>
+  </div>
+</header>
+
+
+<section id="clasicos">
+  <h2>Rollos Clasicos</h2>
+  <div class="menu-grid">
+    <article>
+    <img src="californiaroll.jpg" alt="California Roll">
+      <h3>California Roll</h3>
+      <p>Cangrejo, aguacate, pepino</p>
+      <p class="price">$95.00 MXN</p>
+    </article>
+    <article>
+    <img src="philadelphiaroll.jpg" alt="Philadelphia Roll">
+      <h3>Philadelphia Roll</h3>
+      <p>Salmon y queso crema</p>
+      <p class="price">$110.00 MXN</p>
+    </article>
+    <article>
+    <img src="sakemaki.jpg" alt="Sake Maki">
+      <h3>Sake Maki</h3>
+      <p>Rollo de salmon simple</p>
+      <p class="price">$90.00 MXN</p>
+    </article>
+    <article>
+    <img src="tekkamaki.jpg" alt="Tekka Maki">
+      <h3>Tekka Maki</h3>
+      <p>Rollo de atun</p>
+      <p class="price">$95.00 MXN</p>
+    </article>
+    <article>
+    <img src="avocadomaki.jpg" alt="Avocado Maki">
+      <h3>Avocado Maki</h3>
+      <p>Rollo de aguacate</p>
+      <p class="price">$85.00 MXN</p>
+    </article>
+    <article>
+    <img src="ebimaki.jpg" alt="Ebi Maki">
+      <h3>Ebi Maki</h3>
+      <p>Rollo de camaron cocido</p>
+      <p class="price">$100.00 MXN</p>
+    </article>
+    <article>
+    <img src="tamagoyakiroll.jpg" alt="Tamagoyaki Roll">
+      <h3>Tamagoyaki Roll</h3>
+      <p>Con tortilla dulce</p>
+      <p class="price">$80.00 MXN</p>
+    </article>
+    <article>
+    <img src="kappamaki.jpg" alt="Kappa Maki">
+      <h3>Kappa Maki</h3>
+      <p>Rollo de pepino</p>
+      <p class="price">$80.00 MXN</p>
+    </article>
+  </div>
+</section>
+
+<section id="especiales">
+  <h2> Rollos Especiales</h2>
+  <div class="menu-grid">
+    <article>
+    <img src="spicytunaroll.jpg" alt="Spicy Tuna">
+      <h3>Spicy Tuna</h3>
+      <p>Atun con salsa picante</p>
+      <p class="price">$120.00 MXN</p>
+    </article>
+    <article>
+    <img src="dragonroll.jpg" alt="Dragon Roll">
+      <h3>Dragon Roll</h3>
+      <p>Anguila y aguacate</p>
+      <p class="price">$130.00 MXN</p>
+    </article>
+    <article>
+    <img src="tempuraroll.jpg" alt="Tempura Roll">
+      <h3>Tempura Roll</h3>
+      <p>Camaron empanizado</p>
+      <p class="price">$125.00 MXN</p>
+    </article>
+    <article>
+    <img src="volcanoroll.jpg" alt="Volcano Roll">
+      <h3>Volcano Roll</h3>
+      <p>Rollo horneado</p>
+      <p class="price">$140.00 MXN</p>
+    </article>
+    <article>
+    <img src="tigerroll.jpg" alt="Tiger Roll">
+      <h3>Tiger Roll</h3>
+      <p>Camaron y spicy mayo</p>
+      <p class="price">$130.00 MXN</p>
+    </article>
+    <article>
+    <img src="unagiroll.jpg" alt="Unagi Roll">
+      <h3>Unagi Roll</h3>
+      <p>Anguila y aguacate</p>
+      <p class="price">$135.00 MXN</p>
+    </article>
+    <article>
+    <img src="baconroll.jpg" alt="Bacon Roll">
+      <h3>Bacon Roll</h3>
+      <p>Queso y tocino</p>
+      <p class="price">$110.00 MXN</p>
+    </article>
+    <article>
+    <img src="cheeseroll.jpg" alt="Cheese Roll">
+      <h3>Cheese Roll</h3>
+      <p>Con doble queso</p>
+      <p class="price">$105.00 MXN</p>
+    </article>
+  </div>
+</section>
+
+<section id="bebidas">
+  <h2> Bebidas</h2>
+  <div class="menu-grid">
+    <article>
+    <img src="refrescos.jpg" alt="Refrescos">
+      <h3>Refrescos</h3>
+      <p>Coca-Cola, Sprite</p>
+      <p class="price">$30.00 MXN</p>
+    </article>
+    <article>
+    <img src="tehelado.jpg" alt="T? Helado">
+      <h3>T? Helado</h3>
+      <p>Verde o negro</p>
+      <p class="price">$35.00 MXN</p>
+    </article>
+    <article>
+    <img src="jugosnaturales.jpg" alt="Jugos Naturales">
+      <h3>Jugos Naturales</h3>
+      <p>Naranja, pi?a</p>
+      <p class="price">$40.00 MXN</p>
+    </article>
+    <article>
+    <img src="aguanatural.jpg" alt="Agua Natural">
+      <h3>Agua Natural</h3>
+      <p>Botella 500ml</p>
+      <p class="price">$25.00 MXN</p>
+    </article>
+    <article>
+    <img src="limonada.jpg" alt="Limonada">
+      <h3>Limonada</h3>
+      <p>Con hierbabuena</p>
+      <p class="price">$30.00 MXN</p>
+    </article>
+    <article>
+    <img src="matchalatte.jpg" alt="Matcha Latte">
+      <h3>Matcha Latte</h3>
+      <p>Te verde con leche</p>
+      <p class="price">$45.00 MXN</p>
+    </article>
+    <article>
+    <img src="cafefrio.jpg" alt="Caf? Fr?o">
+      <h3>Cafe Frio</h3>
+      <p>Estilo japones</p>
+      <p class="price">$40.00 MXN</p>
+    </article>
+    <article>
+    <img src="cervezajaponesa.jpg" alt="Cerveza Japonesa">
+      <h3>Cerveza Japonesa</h3>
+      <p>Asahi o Sapporo</p>
+      <p class="price">$50.00 MXN</p>
+    </article>
+  </div>
+</section>
+
+<section id="postres">
+  <h2> Postres</h2>
+  <div class="menu-grid">
+    <article>
+    <img src="pastelmatcha.jpg" alt="Pastel de Matcha">
+      <h3>Pastel de Matcha</h3>
+      <p>Te verde japones</p>
+      <p class="price">$65.00 MXN</p>
+    </article>
+    <article>
+    <img src="motchihelado.jpg" alt="Mochi Helado">
+      <h3>Mochi Helado</h3>
+      <p>Varios sabores</p>
+      <p class="price">$55.00 MXN</p>
+    </article>
+    <article>
+    <img src="cheesecake,jpg" alt="Cheesecake">
+      <h3>Cheesecake</h3>
+      <p>Clasico y cremoso</p>
+      <p class="price">$60.00 MXN</p>
+    </article>
+    <article>
+    <img src="brownie,jpg" alt="Brownie">
+      <h3>Brownie</h3>
+      <p>Con nuez</p>
+      <p class="price">$55.00 MXN</p>
+    </article>
+    <article>
+    <img src="dorayaki.jpg" alt="Dorayaki">
+      <h3>Dorayaki</h3>
+      <p>Relleno de anko</p>
+      <p class="price">$50.00 MXN</p>
+    </article>
+    <article>
+    <img src="gelatinadefrutas.jpg" alt="Gelatina de Frutas">
+      <h3>Gelatina de Frutas</h3>
+      <p>Con leche</p>
+      <p class="price">$45.00 MXN</p>
+    </article>
+    <article>
+    <img src="heladodeteverde.jpg" alt="Helado de T? Verde">
+      <h3>Helado de Te Verde</h3>
+      <p>Fresco y natural</p>
+      <p class="price">$50.00 MXN</p>
+    </article>
+    <article>
+    <img src="ensaladadefrutas.jpg" alt="Ensalada de Frutas">
+      <h3>Ensalada de Frutas</h3>
+      <p>Fresca y ligera</p>
+      <p class="price">$40.00 MXN</p>
+    </article>
+  </div>
+</section>
+
+<section id="reservas" class="reservas-section">
+  <h2>Haz tu reservacion</h2>
+  <p> Telefono: (229) 343 1667</p>
+  <p>WhatsApp: +52 229 130 2482</p>
+</section>
+
+<
+<footer>
+  
+  <div class="datos-alumno">
+      <p>Creado por Dana Sayuri Vazquez Perez</p>
+       <p>Escuela de bachilleres Dr. Alejandro Cerisola</p>
+    <p>
+    Sigueme en Instagram:
+      <a href="https://instagram.com/say_mv1" target="_blank">
+        <i></i> @say_mv1
+      </a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
